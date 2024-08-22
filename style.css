@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;   
+}
+
+.conteiner-global{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.conteiner-global > .conteiner-gallery{
+    height: 100%;
+    width: 100%;
+}
+
+.conteiner-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.conteiner-lectura{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.conteiner-global > .conteiner-lectura{
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(11, 21, 105, 0.774); */
+}
+
+.conteiner-gallery > img {
+    width: 100%;
+}
+.conteiner-lectura > img {
+    width: 100%;
+}
+
+.conteiner-global .conteiner-gallery img{
+    box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
+    border-radius: 5px;
+    
+}
+
+.conteiner-global .conteiner-gallery img:hover {
+    transform:  scale(1.2);
+}
+
+
+.button {
+    display: none; /* Ocultamos el botón por defecto */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  .image-container:hover .button {
+    display: block;
+    opacity: 1;
+  }
