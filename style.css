@@ -42,16 +42,23 @@
     width: 100%;
 }
 
-.conteiner-global .conteiner-gallery img{
+.conteiner-global .conteiner-gallery  img{
     box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
     border-radius: 5px;
-    
 }
 
 .conteiner-global .conteiner-gallery img:hover {
     transform:  scale(1.2);
 }
 
+.conteiner-global .conteiner-lectura  img{
+    box-shadow: 0 10px 6px -6px rgba(6,4,12,0.801);
+    border-radius: 5px;
+}
+
+.conteiner-global .conteiner-lectura img:hover {
+    transform:  scale(1.2);
+}
 
 .button {
     display: none; /* Ocultamos el botón por defecto */

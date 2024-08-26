@@ -21,7 +21,6 @@ function moverAlectura() {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      
       /* const botontarjeta = document.querySelector('.seleccion-img')
       console.log(botontarjeta,"log botontarjeta") */
       const selectTargeta = document.querySelector('.conteiner-lectura')
@@ -33,7 +32,6 @@ function moverAlectura() {
           const img = document.createElement('img');
           img.className = 'conteiner-lectura';
           selectTargeta.appendChild(capturarimg);
-          console.log(cantidad)
           /* capturarimg.forEach(element => {
             /* console.log("aca entro?")
             img.src = element.book.cover;
@@ -48,7 +46,33 @@ function moverAlectura() {
     })
 }
 
+function moverAlibreria() {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const TargetaLectura = document.querySelector('.conteiner-lectura')
+      const tarjetaLibreria = document.querySelector('.conteiner-gallery')
+      if (TargetaLectura.length === 0) {
+        const Vacio = document.createElement('H3')
+        Vacio.textContent = ("No hay ningun libro en lectura")
+        TargetaLectura.appendChild(Vacio) 
+      } else {
+        TargetaLectura.addEventListener('click', e => {
+          if (e.target.nodeName === 'IMG') {
+            const capturarimg = e.target;
+            console.log('seleccionaste libro de seccion lectura: ', capturarimg) //aca selecciono la imagen
+            const img = document.createElement('img'); //creo el elemento img
+            img.className = 'conteiner-lectura';
+            tarjetaLibreria.appendChild(capturarimg); //le doy la imagen al conteiner libreria
+          }
+          else {
+            console.log("nada")
+          }
+        })
 
+      }
+    })
+}
 
 const GenreSelect = document.getElementById('desplegable');
 function filtrarGenero() {
@@ -112,7 +136,7 @@ function seleccionarGenero() {
 
         // Si no se encuentran libros para el género seleccionado
         if (librosFiltrados.length === 0) {
-          tarjeta.innerHTML = '<p>No se encontraron libros para este género.</p>';
+           tarjeta.innerHTML = '<p>No se encontraron libros para este género.</p>'; 
         }
       });
     });
@@ -124,5 +148,6 @@ function seleccionarGenero() {
 
 colocarImagenes();
 moverAlectura();
+moverAlibreria();
 filtrarGenero();
 seleccionarGenero();
